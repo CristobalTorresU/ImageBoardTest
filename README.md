@@ -1,2 +1,2 @@
 # ForumTest
-A forum made with Spring
+An image board made with Spring
