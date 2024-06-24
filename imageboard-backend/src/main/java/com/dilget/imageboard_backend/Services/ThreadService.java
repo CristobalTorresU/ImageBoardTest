@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ThreadService {
@@ -22,6 +23,10 @@ public class ThreadService {
 
     public ThreadEntity getThreadById(Long id) {
         return threadRepository.findById(id).orElse(null);
+    }
+
+    public List<ThreadEntity> getThreadsByBoardId(String board) {
+        return threadRepository.findByBoard_id(board);
     }
 
     public boolean deleteThread(Long id) throws Exception {

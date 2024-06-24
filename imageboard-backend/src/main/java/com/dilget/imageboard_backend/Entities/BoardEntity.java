@@ -14,6 +14,6 @@ public class BoardEntity {
   
   @Id
   @Column(unique = true, nullable = false)
-  private String code;
+  private String id;
 
 }

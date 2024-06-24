@@ -34,4 +34,14 @@ public class ImageController {
         ImageEntity savedImage = imageService.saveImage(file);
         return new ResponseEntity<>(savedImage, HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteImage(@PathVariable Long id) {
+        try {
+            imageService.deleteImage(id);
+            return new ResponseEntity<>(HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

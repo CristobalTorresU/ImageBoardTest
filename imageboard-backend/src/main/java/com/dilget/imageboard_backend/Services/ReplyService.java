@@ -24,10 +24,15 @@ public class ReplyService {
         return replyRepository.findById(id).orElse(null);
     }
 
+    public ArrayList<ReplyEntity> getRepliesByThread_id(Long thread_id) {
+        return (ArrayList<ReplyEntity>) replyRepository.getReplyEntityByThread_id(thread_id);
+    }
+
     public ReplyEntity updateReply(ReplyEntity reply) {
         return replyRepository.save(reply);
     }
 
+    // TODO: Hacer que se muestre como eliminado, no que se borre totalmente.
     public boolean deleteReply(Long id) throws Exception {
         try {
             replyRepository.deleteById(id);
