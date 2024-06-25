@@ -12,7 +12,7 @@ const Home = () => {
             <Box
                 width="800px"
                 height="350px"
-                bgcolor="text.primary"
+                bgcolor="#FFFFFF"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -23,7 +23,7 @@ const Home = () => {
             <Box
                 width="800px"
                 height="350px"
-                bgcolor="text.primary"
+                bgcolor="#FFFFFF"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
@@ -34,7 +34,7 @@ const Home = () => {
             <Box
                 width="800px"
                 height="350px"
-                bgcolor="text.primary"
+                bgcolor="#FFFFFF"
                 display="flex"
                 alignItems="center"
                 justifyContent="center"
