@@ -25,7 +25,7 @@ public class ThreadService {
         return threadRepository.findById(id).orElse(null);
     }
 
-    public List<ThreadEntity> getThreadsByBoardId(String board) {
+    public List<ThreadEntity> getThreadsByBoardId(Long board) {
         return threadRepository.findByBoard_id(board);
     }
 

@@ -13,7 +13,12 @@ import lombok.NoArgsConstructor;
 public class BoardEntity {
   
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(unique = true, nullable = false)
-  private String id;
+  private Long id;
 
+  @Column(unique = true, nullable = false)
+  private String code;
+  private String name;
+  private Long category;
 }

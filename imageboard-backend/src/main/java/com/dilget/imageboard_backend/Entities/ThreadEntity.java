@@ -32,5 +32,5 @@ public class ThreadEntity {
   private int imageCount;
   private boolean isArchived;
   private boolean isPinned;
-  private String board_id;
+  private Long board_id;
 }

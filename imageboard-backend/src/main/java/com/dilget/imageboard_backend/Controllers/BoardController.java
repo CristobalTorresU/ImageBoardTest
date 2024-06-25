@@ -21,20 +21,20 @@ public class BoardController {
         return ResponseEntity.ok(boards);
     }
 
-    @GetMapping("/${id}")
-    public ResponseEntity<BoardEntity> getBoardById(Long id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<BoardEntity> getBoardById(@PathVariable Long id) {
         BoardEntity board = boardService.getBoardById(id);
         return ResponseEntity.ok(board);
     }
 
     @PostMapping("/")
-    public ResponseEntity<BoardEntity> saveBoard(BoardEntity board) {
+    public ResponseEntity<BoardEntity> saveBoard(@RequestBody BoardEntity board) {
         BoardEntity savedBoard = boardService.saveBoard(board);
         return ResponseEntity.ok(savedBoard);
     }
 
-    @DeleteMapping("/${id}")
-    public ResponseEntity<Boolean> deleteBoard(Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deleteBoard(@PathVariable Long id) {
         try {
             boardService.deleteBoard(id);
             return ResponseEntity.ok(true);

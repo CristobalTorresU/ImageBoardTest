@@ -21,25 +21,25 @@ public class ReplyController {
         return ResponseEntity.ok(replies);
     }
 
-    @GetMapping("/${id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ReplyEntity> getReplyById(@PathVariable Long id) {
         ReplyEntity reply = replyService.getReplyById(id);
         return ResponseEntity.ok(reply);
     }
 
-    @GetMapping("/${thread_id}")
+    @GetMapping("/{thread_id}")
     public ResponseEntity<List<ReplyEntity>> getRepliesByThread_id(@PathVariable Long thread_id) {
         List<ReplyEntity> replies = replyService.getRepliesByThread_id(thread_id);
         return ResponseEntity.ok(replies);
     }
 
     @PostMapping("/")
-    public ResponseEntity<ReplyEntity> saveReply(ReplyEntity reply) {
+    public ResponseEntity<ReplyEntity> saveReply(@RequestBody ReplyEntity reply) {
         ReplyEntity savedReply = replyService.saveReply(reply);
         return ResponseEntity.ok(savedReply);
     }
 
-    @DeleteMapping("/${id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteReply(@PathVariable Long id) {
         try {
             replyService.deleteReply(id);

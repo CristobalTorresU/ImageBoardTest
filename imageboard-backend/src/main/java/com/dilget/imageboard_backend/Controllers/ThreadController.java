@@ -22,31 +22,31 @@ public class ThreadController {
         return ResponseEntity.ok(threads);
     }
 
-    @GetMapping("/${id}")
+    @GetMapping("/{id}")
     public ResponseEntity<ThreadEntity> getThreadById(@PathVariable Long id) {
         ThreadEntity thread = threadService.getThreadById(id);
         return ResponseEntity.ok(thread);
     }
 
-    @GetMapping("/${board}")
-    public ResponseEntity<List<ThreadEntity>> getThreadsByBoardId(@PathVariable String board) {
+    @GetMapping("/{board}")
+    public ResponseEntity<List<ThreadEntity>> getThreadsByBoardId(@PathVariable Long board) {
         List<ThreadEntity> threads = threadService.getThreadsByBoardId(board);
         return ResponseEntity.ok(threads);
     }
 
     @PostMapping("/")
-    public ResponseEntity<ThreadEntity> saveThread(ThreadEntity thread) {
+    public ResponseEntity<ThreadEntity> saveThread(@RequestBody ThreadEntity thread) {
         ThreadEntity savedThread = threadService.saveThread(thread);
         return ResponseEntity.ok(savedThread);
     }
 
     @PutMapping("/")
-    public ResponseEntity<ThreadEntity> updatedThread(ThreadEntity thread) {
+    public ResponseEntity<ThreadEntity> updatedThread(@RequestBody ThreadEntity thread) {
         ThreadEntity updatedThread = threadService.saveThread(thread);
         return ResponseEntity.ok(updatedThread);
     }
 
-    @DeleteMapping("/${id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> deleteThread(@PathVariable Long id) {
         try {
             threadService.deleteThread(id);
