@@ -21,13 +21,14 @@ public class ThreadEntity {
 
   @ManyToOne
   @JoinColumn(name = "image_id", referencedColumnName = "id")
+  //@Column(nullable = false)
   private ImageEntity image;
 
   private String subject;
   private String username;
   private LocalDate date;
   private LocalTime time;
-  private String message;
+  private String comment;
   private int replyCount;
   private int imageCount;
   private boolean isArchived;

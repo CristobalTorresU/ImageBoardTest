@@ -27,6 +27,6 @@ public class ReplyEntity {
     private String username;
     private LocalDate date;
     private LocalTime time;
-    private String message;
+    private String comment;
     private Long thread_id;
 }

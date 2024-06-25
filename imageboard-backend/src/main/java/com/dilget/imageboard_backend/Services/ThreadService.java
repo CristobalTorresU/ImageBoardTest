@@ -5,6 +5,8 @@ import com.dilget.imageboard_backend.Repositories.ThreadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,18 @@ public class ThreadService {
     }
 
     public ThreadEntity saveThread(ThreadEntity thread) {
+        thread.setArchived(false);
+        thread.setPinned(false);
+        thread.setReplyCount(0);
+        thread.setImageCount(0);
+        thread.setDate(LocalDate.now());
+        thread.setTime(LocalTime.now());
+        if (thread.getSubject() == null) {
+            thread.setSubject("");
+        }
+        if (thread.getUsername() == null) {
+            thread.setUsername("Anonymous");
+        }
         return threadRepository.save(thread);
     }
 

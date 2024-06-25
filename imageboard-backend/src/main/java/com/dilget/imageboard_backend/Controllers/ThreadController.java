@@ -35,7 +35,7 @@ public class ThreadController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<ThreadEntity> saveThread(@RequestBody ThreadEntity thread) {
+    public ResponseEntity<ThreadEntity> createThread(@RequestBody ThreadEntity thread) {
         ThreadEntity savedThread = threadService.saveThread(thread);
         return ResponseEntity.ok(savedThread);
     }
