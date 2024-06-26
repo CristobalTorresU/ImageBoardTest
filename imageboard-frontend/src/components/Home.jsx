@@ -1,4 +1,5 @@
 import { Box, Table, TableBody, TableHead } from "@mui/material";
+import HeaderBox from "./HeaderBox";
 
 const Home = () => {
     return (
@@ -18,7 +19,9 @@ const Home = () => {
                 justifyContent="center"
                 m={2}
             >
-                Cajita 1
+                <HeaderBox title="sexoo">
+                    <p>sexu</p>
+                </HeaderBox>
             </Box>
             <Box
                 width="800px"
